@@ -17,7 +17,6 @@ public class User {
     private String phone;
     private LocalDate birthDate;
     private String password;
-
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
@@ -79,5 +78,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 }
