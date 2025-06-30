@@ -3,6 +3,9 @@ package com.caioLessa.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_order")
@@ -19,6 +22,9 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -46,5 +52,17 @@ public class Order {
 
     public User getClient() {
         return client;
+    }
+
+    public Set<OrderItem> getItems() {
+        return items;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public List<Product> getProducts() {
+        return items.stream().map(x -> x.getProduct()).toList();
     }
 }
