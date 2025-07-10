@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/products")
@@ -36,6 +35,12 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable) {
         Page<ProductDTO> dto = productService.findAll(pageable);
+        return ResponseEntity.ok(dto);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductDTO> findById(@PathVariable Long id, @RequestBody ProductDTO dto) {
+        dto = productService.update(id, dto);
         return ResponseEntity.ok(dto);
     }
 }
