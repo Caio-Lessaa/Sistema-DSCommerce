@@ -35,4 +35,4 @@ DELETE /products/{id}
 ## 📌 Observações
 - A aplicação é baseada em Spring Boot
 - As entidades estão mapeadas com JPA/Hibernate
-- O projeto foi desenvolvido como parte de um curso de Spring com foco em backend
+- O projeto foi desenvolvido como parte do curso de Java com Spring Boot do grande professor Nélio Alves
