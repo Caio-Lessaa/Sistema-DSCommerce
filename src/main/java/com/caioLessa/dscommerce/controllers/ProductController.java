@@ -1,7 +1,7 @@
 package com.caioLessa.dscommerce.controllers;
 
 import com.caioLessa.dscommerce.dto.ProductDTO;
-import com.caioLessa.dscommerce.service.ProductService;
+import com.caioLessa.dscommerce.services.ProductService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
